@@ -7,6 +7,8 @@
 */
 
 (function () {
+  // Enable .js styles (used by fade-in / reveal CSS)
+  document.documentElement.classList.add("js");
   const cartCountEl = document.getElementById("cartCount");
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
@@ -57,18 +59,183 @@
     });
   });
 
-  // Cart button (placeholder)
-  document.getElementById("cartBtn")?.addEventListener("click", () => {
-    alert("Cart is a placeholder in this static template.\n\nWhen you're ready for checkout, we can add Shopify / Stripe / Squarespace / etc.");
+  // Cart button -> Stripe Payment Link checkout
+    const CHECKOUT_URL = "https://buy.stripe.com/PASTE_YOUR_LINK_HERE";
+
+    document.getElementById("cartBtn")?.addEventListener("click", () => {
+      window.location.href = CHECKOUT_URL;
+    });
+
+  // Newsletter (real submit)
+  document.getElementById("newsletterForm")?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const form = e.currentTarget;
+    const input = form.querySelector('input[type="email"]');
+    const msg = document.getElementById("newsletterMsg");
+    const btn = form.querySelector('button[type="submit"]');
+
+    if (!input || !msg || !btn) return;
+
+    const email = input.value.trim();
+    if (!email) return;
+
+    // If you forgot to set the endpoint
+    if (!form.action || form.action === "#" || form.action.includes("#")) {
+      msg.textContent = "Form endpoint not set yet.";
+      return;
+    }
+
+    msg.textContent = "Submitting…";
+    btn.disabled = true;
+
+    try {
+      const res = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+
+      if (res.ok) {
+        msg.textContent = "Thanks! You’re on the list.";
+        form.reset();
+      } else {
+        msg.textContent = "Hmm—something went wrong. Please try again.";
+      }
+    } catch (err) {
+      msg.textContent = "Network error—please try again.";
+    } finally {
+      btn.disabled = false;
+    }
   });
 
-  // Newsletter (placeholder)
-  document.getElementById("newsletterForm")?.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const input = e.currentTarget.querySelector("input[type=email]");
-    if (!input) return;
-    if (!input.value.trim()) return;
-    alert("Thanks! (This form is a placeholder — connect it to Mailchimp/ConvertKit/etc. later.)");
-    input.value = "";
-  });
+    // Scroll reveal: fade elements in as they enter the viewport
+  const revealEls = Array.from(document.querySelectorAll(".reveal"));
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (revealEls.length) {
+    if (reducedMotion) {
+      revealEls.forEach((el) => el.classList.add("is-visible"));
+    } else {
+      const io = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (!entry.isIntersecting) continue;
+            entry.target.classList.add("is-visible");
+            io.unobserve(entry.target); // animate once
+          }
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -10% 0px" }
+      );
+
+      revealEls.forEach((el) => io.observe(el));
+    }
+  }
+    // HERO CAROUSEL (clickable + autoplay + pause)
+  const carousel = document.querySelector(".js-hero-carousel");
+  if (carousel) {
+    const track = carousel.querySelector(".hero-carousel__track");
+    const slides = Array.from(carousel.querySelectorAll(".hero-carousel__slide"));
+    const dots = Array.from(carousel.querySelectorAll(".hero-carousel__dot"));
+
+    const prevBtn = carousel.querySelector('[data-action="prev"]');
+    const nextBtn = carousel.querySelector('[data-action="next"]');
+    const toggleBtn = carousel.querySelector('[data-action="toggle"]');
+
+    const interval = parseInt(carousel.dataset.interval || "5500", 10);
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (!track || slides.length === 0) return;
+
+    let index = 0;
+    let paused = false;
+    let timer = null;
+
+    const clampIndex = (i) => (i + slides.length) % slides.length;
+
+    const render = () => {
+      track.style.transform = `translateX(${-index * 100}%)`;
+
+      slides.forEach((s, i) => {
+        s.setAttribute("aria-hidden", i === index ? "false" : "true");
+      });
+
+      dots.forEach((d, i) => {
+        const active = i === index;
+        d.classList.toggle("is-active", active);
+        if (active) d.setAttribute("aria-current", "true");
+        else d.removeAttribute("aria-current");
+      });
+    };
+
+    const stop = () => {
+      if (timer) {
+        window.clearInterval(timer);
+        timer = null;
+      }
+    };
+
+    const start = () => {
+      if (reduceMotion || paused || slides.length <= 1) return;
+      stop();
+      timer = window.setInterval(() => {
+        goTo(index + 1, false); // auto-advance (don’t restart timer)
+      }, interval);
+    };
+
+    const setPaused = (p) => {
+      paused = p;
+
+      if (toggleBtn) {
+        toggleBtn.classList.toggle("is-paused", paused);
+        toggleBtn.setAttribute("aria-pressed", paused ? "true" : "false");
+        toggleBtn.setAttribute("aria-label", paused ? "Play slideshow" : "Pause slideshow");
+      }
+
+      if (paused) stop();
+      else start();
+    };
+
+    const goTo = (i, userAction = true) => {
+      index = clampIndex(i);
+      render();
+
+      // If the user clicked prev/next/dot, restart the autoplay timer
+      if (userAction) start();
+    };
+
+    prevBtn?.addEventListener("click", () => goTo(index - 1, true));
+    nextBtn?.addEventListener("click", () => goTo(index + 1, true));
+    toggleBtn?.addEventListener("click", () => setPaused(!paused));
+
+    dots.forEach((dot) => {
+      dot.addEventListener("click", () => {
+        const i = parseInt(dot.dataset.slide || "0", 10);
+        goTo(i, true);
+      });
+    });
+
+    // Keyboard: left/right to change slides, space to pause/play
+    carousel.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        goTo(index - 1, true);
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        goTo(index + 1, true);
+      } else if (e.key === " " || e.key === "Spacebar") {
+        e.preventDefault();
+        setPaused(!paused);
+      }
+    });
+
+    // If the tab goes inactive, stop; resume when visible (unless user paused)
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) stop();
+      else if (!paused) start();
+    });
+
+    render();
+    start();
+  }
 })();

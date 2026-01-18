@@ -77,12 +77,12 @@ a {
 }
 
 .brand {
-  font-family: "Bodoni Moda", ui-serif, Georgia, serif;
-  font-weight: 600;
-  font-size: clamp(30px, 3.2vw, 56px);
-  letter-spacing: 0.02em;
-  text-decoration: none;
+  font-family: "Ballet", cursive;   /* Only the title uses Ballet */
+  font-weight: 100;                /* Ballet is basically one weight */
+  letter-spacing: 0;               /* scripts usually look best with 0 */
   line-height: 1;
+  font-size: clamp(30px, 3.2vw, 56px);
+  text-decoration-thickness: 1px;
 }
 
 .header-actions {
@@ -187,11 +187,12 @@ a {
 }
 
 .hero h1 {
-  font-family: "Bodoni Moda", ui-serif, Georgia, serif;
-  font-weight: 600;
-  font-size: clamp(56px, 6.6vw, 120px);
+  font-family: "STIX Two Text", ui-serif, Georgia, serif;
+  font-weight: 10;
+  font-size: clamp(56px, 5.6vw, 120px);
   line-height: 0.92;
   margin: 0 0 26px;
+  letter-spacing: 0.001em;
 }
 
 .hero-media {
@@ -201,6 +202,159 @@ a {
   border: 1px solid rgba(18, 18, 18, 0.08);
 }
 
+/* HERO CAROUSEL (pink section background acts as border) */
+.hero-carousel-section {
+  background: var(--accent);
+  /* This padding is the “pink border thickness” */
+  padding: 26px;
+}
+
+/* This controls how wide the slideshow is.
+   If you want it truly edge-to-edge, remove max-width. */
+.hero-carousel {
+  max-width: var(--max);
+  margin: 0 auto;
+
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+/* Use a wide Nike-like ratio.
+   Change this if you want taller/shorter. */
+.hero-carousel__viewport {
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.hero-carousel__track {
+  display: flex;
+  height: 100%;
+  transform: translateX(0%);
+  transition: transform 650ms ease;
+  will-change: transform;
+}
+
+.hero-carousel__slide {
+  flex: 0 0 100%;
+  height: 100%;
+}
+
+.hero-carousel__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dots (bottom center) */
+.hero-carousel__dots {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  z-index: 5;
+}
+
+.hero-carousel__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.hero-carousel__dot.is-active {
+  width: 22px;                 /* active dot becomes “pill” */
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* Controls (bottom right) */
+.hero-carousel__controls {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  gap: 10px;
+  z-index: 6;
+}
+
+.hero-carousel__btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(18, 18, 18, 0.18);
+
+  background: rgba(255, 255, 255, 0.85);
+  color: rgba(18, 18, 18, 0.78);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+}
+
+.hero-carousel__btn:hover {
+  background: rgba(255, 255, 255, 0.97);
+  color: rgba(18, 18, 18, 0.92);
+}
+
+.hero-carousel__btn:focus-visible {
+  outline: 2px solid rgba(233, 140, 155, 0.85);
+  outline-offset: 3px;
+}
+
+.hero-carousel__btn .icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Toggle between pause/play icons */
+.hero-carousel__toggle .icon-play {
+  display: none;
+}
+.hero-carousel__toggle.is-paused .icon-pause {
+  display: none;
+}
+.hero-carousel__toggle.is-paused .icon-play {
+  display: block;
+}
+
+/* Mobile: make the hero less “letterbox” */
+@media (max-width: 720px) {
+  .hero-carousel__viewport {
+    aspect-ratio: 4 / 5;
+  }
+
+  .hero-carousel__controls {
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .hero-carousel__dots {
+    bottom: 12px;
+  }
+
+  .hero-carousel__btn {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-carousel__track {
+    transition: none;
+  }
+}
+
+
 /* Sections */
 .section {
   padding-top: clamp(34px, 4vw, 72px);
@@ -208,9 +362,9 @@ a {
 }
 
 .section h2 {
-  font-family: "Bodoni Moda", ui-serif, Georgia, serif;
-  font-weight: 600;
-  font-size: clamp(44px, 4.6vw, 86px);
+  font-family: "STIX Two Text", ui-serif, Georgia, serif;
+  font-weight: 300;
+  font-size: clamp(20px, 4.6vw, 40px);
   line-height: 0.95;
   margin: 0 0 28px;
 }
@@ -235,9 +389,9 @@ a {
 }
 
 .product h3 {
-  font-family: "Bodoni Moda", ui-serif, Georgia, serif;
-  font-weight: 600;
-  font-size: clamp(28px, 2.5vw, 44px);
+  font-family: "STIX Two Text", ui-serif, Georgia, serif;
+  font-weight: 100;
+  font-size: clamp(14px, 2.5vw, 22px);
   margin: 18px 0 8px;
   line-height: 1;
 }
@@ -304,9 +458,22 @@ a {
 }
 
 /* Accent split section */
+/* Full-width accent background sections (pink band) */
+.section-accent,
 .accent {
   background: var(--accent);
 }
+
+/* Optional additional background bands */
+.section-cream { background: var(--bg); }
+.section-white { background: #ffffff; }
+
+.section-dark {
+  background: #121212;
+  color: var(--bg);
+}
+.section-dark a { color: var(--bg); }
+
 
 .split {
   display: grid;
@@ -323,8 +490,8 @@ a {
 }
 
 .split h2 {
-  font-family: "Bodoni Moda", ui-serif, Georgia, serif;
-  font-weight: 600;
+  font-family: "STIX Two Text", ui-serif, Georgia, serif;
+  font-weight: 100;
   font-size: clamp(56px, 6vw, 98px);
   line-height: 0.9;
   margin: 0 0 16px;
@@ -518,6 +685,33 @@ a {
   align-items: center;
   font-size: 14px;
   color: rgba(18, 18, 18, 0.64);
+}
+
+/* Scroll reveal (fade-in on scroll) */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 700ms ease, transform 700ms ease;
+  will-change: opacity, transform;
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional small stagger helpers */
+.js .reveal.delay-1 { transition-delay: 80ms; }
+.js .reveal.delay-2 { transition-delay: 160ms; }
+.js .reveal.delay-3 { transition-delay: 240ms; }
+
+/* Accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 /* Responsive */
