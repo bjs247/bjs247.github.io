@@ -228,4 +228,27 @@
     render();
     start();
   }
+
+  // Close nav dropdown when clicking outside / pressing Esc
+  (() => {
+    const dropdowns = document.querySelectorAll(".nav-dropdown");
+    if (!dropdowns.length) return;
+
+    document.addEventListener("click", (e) => {
+      dropdowns.forEach((dd) => {
+        if (!dd.contains(e.target)) dd.removeAttribute("open");
+      });
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") dropdowns.forEach((dd) => dd.removeAttribute("open"));
+    });
+
+    dropdowns.forEach((dd) => {
+      dd.querySelectorAll("a").forEach((a) => {
+        a.addEventListener("click", () => dd.removeAttribute("open"));
+      });
+    });
+  })();
+
 })();

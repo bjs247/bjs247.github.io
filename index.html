@@ -111,11 +111,19 @@
     </div>
 
     <nav class="container header-nav" aria-label="Primary navigation">
-      <a href="#shop">Shop</a>
+      <details class="nav-dropdown">
+        <summary>Shop</summary>
+        <div class="nav-dropdown__menu">
+          <a href="/shop/?category=bowls">Bowls</a>
+          <a href="/shop/?category=cups">Cups</a>
+          <a href="/shop/?category=vases">Vases</a>
+        </div>
+      </details>
       <!-- <a href="#journal">Journal</a> -->
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
       <a href="slovak/">Learn Slovak</a>
+      <a id="adminLink" href="/admin/" hidden>Admin</a>
     </nav>
   </header>
 
@@ -331,7 +339,14 @@
       -->
 
       <nav class="footer-links" aria-label="Footer links">
-        <a href="#shop">Shop</a>
+        <details class="nav-dropdown">
+          <summary>Shop</summary>
+          <div class="nav-dropdown__menu">
+            <a href="/shop/?category=bowls">Bowls</a>
+            <a href="/shop/?category=cups">Cups</a>
+            <a href="/shop/?category=vases">Vases</a>
+          </div>
+        </details>
        <!-- <a href="#journal">Journal</a> -->
         <a href="#about">About</a>
         <a href="#contact">Contact</a>

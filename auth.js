@@ -18,6 +18,7 @@
       detectSessionInUrl: true,
     },
   });
+  window.sb = sb;
 
   // ---- Drawer UI ----
   const accountBtn = document.getElementById("accountBtn");
@@ -169,7 +170,46 @@
     closeDrawer();
   });
 
-  // Keep UI in sync across refreshes / tabs
-  sb.auth.getSession().then(({ data }) => setAuthUI(data.session?.user || null));
-  sb.auth.onAuthStateChange((_event, session) => setAuthUI(session?.user || null));
+  // Keep UI in sync across refreshes / tabs + admin link
+  const adminLink = document.getElementById("adminLink");
+
+  async function updateAdminLink(session) {
+    if (!adminLink) return;
+
+    // default hidden
+    adminLink.hidden = true;
+
+    if (!session?.user) return;
+
+    const { data, error } = await sb
+      .from("profiles")
+      .select("is_admin")
+      .eq("id", session.user.id)
+      .maybeSingle(); // safer than .single()
+
+    if (!error && data?.is_admin) {
+      adminLink.hidden = false;
+    }
+  }
+
+  // IMPORTANT:
+  // Don't do async Supabase calls *inside* onAuthStateChange.
+  // Defer them (Supabase recommends setTimeout(..., 0)).
+  function handleSession(session) {
+    setAuthUI(session?.user || null);
+
+    setTimeout(() => {
+      updateAdminLink(session).catch((e) =>
+        console.warn("Admin link check failed:", e?.message || e)
+      );
+    }, 0);
+  }
+
+  // Run once on load
+  sb.auth.getSession().then(({ data }) => handleSession(data.session));
+
+  // Keep in sync
+  sb.auth.onAuthStateChange((_event, session) => handleSession(session));
+
+
 })();
