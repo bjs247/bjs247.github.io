@@ -66,48 +66,38 @@
       window.location.href = CHECKOUT_URL;
     });
 
-  // Newsletter (real submit)
   document.getElementById("newsletterForm")?.addEventListener("submit", async (e) => {
     e.preventDefault();
-
     const form = e.currentTarget;
-    const input = form.querySelector('input[type="email"]');
+
     const msg = document.getElementById("newsletterMsg");
     const btn = form.querySelector('button[type="submit"]');
+    if (!msg || !btn) return;
 
-    if (!input || !msg || !btn) return;
-
-    const email = input.value.trim();
-    if (!email) return;
-
-    // If you forgot to set the endpoint
-    if (!form.action || form.action === "#" || form.action.includes("#")) {
-      msg.textContent = "Form endpoint not set yet.";
-      return;
-    }
+    // Paste your Apps Script Web App URL here:
+    const ENDPOINT = "https://script.google.com/macros/s/AKfycbxTkP-Y5nU8lkgLNNygmocb8IWySQWnSKERIHy0tTsru4WeCATTYkxnRbJFZYeoSy1-/exec";
 
     msg.textContent = "Submitting…";
     btn.disabled = true;
 
     try {
-      const res = await fetch(form.action, {
+      // Apps Script Web Apps don’t reliably allow CORS responses.
+      // So we use no-cors and show success optimistically if the request sends.
+      await fetch(ENDPOINT, {
         method: "POST",
+        mode: "no-cors",
         body: new FormData(form),
-        headers: { Accept: "application/json" },
       });
 
-      if (res.ok) {
-        msg.textContent = "Thanks! You’re on the list.";
-        form.reset();
-      } else {
-        msg.textContent = "Hmm—something went wrong. Please try again.";
-      }
+      msg.textContent = "Thanks! Check your email for your code.";
+      form.reset();
     } catch (err) {
-      msg.textContent = "Network error—please try again.";
+      msg.textContent = "Network error. Please try again.";
     } finally {
       btn.disabled = false;
     }
   });
+
 
     // Scroll reveal: fade elements in as they enter the viewport
   const revealEls = Array.from(document.querySelectorAll(".reveal"));
