@@ -17,6 +17,12 @@
   --pad-y: clamp(18px, 2.2vw, 34px);
 }
 
+/* Force the HTML `hidden` attribute to ALWAYS hide elements */
+[hidden] {
+  display: none !important;
+}
+
+
 * {
   box-sizing: border-box;
 }
