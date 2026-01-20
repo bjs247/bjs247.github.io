@@ -1,0 +1,96 @@
+{
+  "lessonId": "lesson4",
+  "title": "Lesson 4: Conjugation (present tense)",
+  "intro": "In Slovak, verbs change depending on who is doing the action (I/you/he/we…). In this lesson, you’ll learn present-tense conjugation using two common verbs: byť (to be) and mať (to have).",
+
+  "verbs": [
+    {
+      "id": "byt",
+      "infinitive": "byť",
+      "english": "to be",
+      "note": "Irregular verb. Present tense forms:",
+      "rows": [
+        { "id": "byt_ja",  "subjectEn": "I",                      "subjectSk": "ja",  "form": "som", "audio": "" },
+        { "id": "byt_ty",  "subjectEn": "you (informal)",        "subjectSk": "ty",  "form": "si",  "audio": "" },
+        { "id": "byt_on",  "subjectEn": "he",                   "subjectSk": "on",  "form": "je",  "audio": "" },
+        { "id": "byt_ona", "subjectEn": "she",                  "subjectSk": "ona", "form": "je",  "audio": "" },
+        { "id": "byt_ono", "subjectEn": "it",                   "subjectSk": "ono", "form": "je",  "audio": "" },
+        { "id": "byt_my",  "subjectEn": "we",                   "subjectSk": "my",  "form": "sme", "audio": "" },
+        { "id": "byt_vy",  "subjectEn": "you (plural / formal)","subjectSk": "vy",  "form": "ste", "audio": "" },
+        { "id": "byt_oni", "subjectEn": "they (masc.)",          "subjectSk": "oni", "form": "sú",  "audio": "" },
+        { "id": "byt_ony", "subjectEn": "they (fem./neut.)",     "subjectSk": "ony", "form": "sú",  "audio": "" }
+      ]
+    },
+    {
+      "id": "mat",
+      "infinitive": "mať",
+      "english": "to have",
+      "note": "Very common verb. Present tense forms:",
+      "rows": [
+        { "id": "mat_ja",  "subjectEn": "I",                      "subjectSk": "ja",  "form": "mám",  "audio": "" },
+        { "id": "mat_ty",  "subjectEn": "you (informal)",        "subjectSk": "ty",  "form": "máš",  "audio": "" },
+        { "id": "mat_on",  "subjectEn": "he",                   "subjectSk": "on",  "form": "má",   "audio": "" },
+        { "id": "mat_ona", "subjectEn": "she",                  "subjectSk": "ona", "form": "má",   "audio": "" },
+        { "id": "mat_ono", "subjectEn": "it",                   "subjectSk": "ono", "form": "má",   "audio": "" },
+        { "id": "mat_my",  "subjectEn": "we",                   "subjectSk": "my",  "form": "máme", "audio": "" },
+        { "id": "mat_vy",  "subjectEn": "you (plural / formal)","subjectSk": "vy",  "form": "máte", "audio": "" },
+        { "id": "mat_oni", "subjectEn": "they (masc.)",          "subjectSk": "oni", "form": "majú", "audio": "" },
+        { "id": "mat_ony", "subjectEn": "they (fem./neut.)",     "subjectSk": "ony", "form": "majú", "audio": "" }
+      ]
+    }
+  ],
+
+  "examples": [
+    { "id": "ex_byt_ja",  "en": "I am at home.",                       "sk": "Ja som doma.",  "audio": "" },
+    { "id": "ex_byt_ty",  "en": "You are at home.",                   "sk": "Ty si doma.",   "audio": "" },
+    { "id": "ex_byt_my",  "en": "We are at home.",                    "sk": "My sme doma.",  "audio": "" },
+
+    { "id": "ex_mat_ja",  "en": "I have time.",                       "sk": "Ja mám čas.",   "audio": "" },
+    { "id": "ex_mat_ty",  "en": "You have a car.",                    "sk": "Ty máš auto.",  "audio": "" },
+    { "id": "ex_mat_oni", "en": "They have time.",                    "sk": "Oni majú čas.", "audio": "" }
+  ],
+
+  "phase1": [
+    { "id": "p1_byt_ja",  "verbId": "byt", "verbSk": "byť", "verbEn": "to be",   "subjectEn": "I",                      "subjectSk": "ja",  "answer": "som",  "accept": ["som"] },
+    { "id": "p1_byt_ty",  "verbId": "byt", "verbSk": "byť", "verbEn": "to be",   "subjectEn": "you (informal)",        "subjectSk": "ty",  "answer": "si",   "accept": ["si"] },
+    { "id": "p1_byt_on",  "verbId": "byt", "verbSk": "byť", "verbEn": "to be",   "subjectEn": "he",                   "subjectSk": "on",  "answer": "je",   "accept": ["je"] },
+    { "id": "p1_byt_ona", "verbId": "byt", "verbSk": "byť", "verbEn": "to be",   "subjectEn": "she",                  "subjectSk": "ona", "answer": "je",   "accept": ["je"] },
+    { "id": "p1_byt_ono", "verbId": "byt", "verbSk": "byť", "verbEn": "to be",   "subjectEn": "it",                   "subjectSk": "ono", "answer": "je",   "accept": ["je"] },
+    { "id": "p1_byt_my",  "verbId": "byt", "verbSk": "byť", "verbEn": "to be",   "subjectEn": "we",                   "subjectSk": "my",  "answer": "sme",  "accept": ["sme"] },
+    { "id": "p1_byt_vy",  "verbId": "byt", "verbSk": "byť", "verbEn": "to be",   "subjectEn": "you (plural / formal)","subjectSk": "vy",  "answer": "ste",  "accept": ["ste"] },
+    { "id": "p1_byt_oni", "verbId": "byt", "verbSk": "byť", "verbEn": "to be",   "subjectEn": "they (masc.)",          "subjectSk": "oni", "answer": "sú",   "accept": ["sú", "su"] },
+    { "id": "p1_byt_ony", "verbId": "byt", "verbSk": "byť", "verbEn": "to be",   "subjectEn": "they (fem./neut.)",     "subjectSk": "ony", "answer": "sú",   "accept": ["sú", "su"] },
+
+    { "id": "p1_mat_ja",  "verbId": "mat", "verbSk": "mať", "verbEn": "to have", "subjectEn": "I",                      "subjectSk": "ja",  "answer": "mám",  "accept": ["mám", "mam"] },
+    { "id": "p1_mat_ty",  "verbId": "mat", "verbSk": "mať", "verbEn": "to have", "subjectEn": "you (informal)",        "subjectSk": "ty",  "answer": "máš",  "accept": ["máš", "mas"] },
+    { "id": "p1_mat_on",  "verbId": "mat", "verbSk": "mať", "verbEn": "to have", "subjectEn": "he",                   "subjectSk": "on",  "answer": "má",   "accept": ["má", "ma"] },
+    { "id": "p1_mat_ona", "verbId": "mat", "verbSk": "mať", "verbEn": "to have", "subjectEn": "she",                  "subjectSk": "ona", "answer": "má",   "accept": ["má", "ma"] },
+    { "id": "p1_mat_ono", "verbId": "mat", "verbSk": "mať", "verbEn": "to have", "subjectEn": "it",                   "subjectSk": "ono", "answer": "má",   "accept": ["má", "ma"] },
+    { "id": "p1_mat_my",  "verbId": "mat", "verbSk": "mať", "verbEn": "to have", "subjectEn": "we",                   "subjectSk": "my",  "answer": "máme", "accept": ["máme", "mame"] },
+    { "id": "p1_mat_vy",  "verbId": "mat", "verbSk": "mať", "verbEn": "to have", "subjectEn": "you (plural / formal)","subjectSk": "vy",  "answer": "máte", "accept": ["máte", "mate"] },
+    { "id": "p1_mat_oni", "verbId": "mat", "verbSk": "mať", "verbEn": "to have", "subjectEn": "they (masc.)",          "subjectSk": "oni", "answer": "majú", "accept": ["majú", "maju"] },
+    { "id": "p1_mat_ony", "verbId": "mat", "verbSk": "mať", "verbEn": "to have", "subjectEn": "they (fem./neut.)",     "subjectSk": "ony", "answer": "majú", "accept": ["majú", "maju"] }
+  ],
+
+  "phase2": [
+    { "id": "p2_byt_ja_doma",  "verbId": "byt", "verbSk": "byť", "verbEn": "to be",   "en": "I am at home.",                        "skTemplate": "Ja ___ doma.",   "skFull": "Ja som doma.",  "answer": "som",  "accept": ["som"],        "audio": "" },
+    { "id": "p2_byt_ty_doma",  "verbId": "byt", "verbSk": "byť", "verbEn": "to be",   "en": "You are at home.",                    "skTemplate": "Ty ___ doma.",   "skFull": "Ty si doma.",   "answer": "si",   "accept": ["si"],         "audio": "" },
+    { "id": "p2_byt_on_doma",  "verbId": "byt", "verbSk": "byť", "verbEn": "to be",   "en": "He is at home.",                      "skTemplate": "On ___ doma.",   "skFull": "On je doma.",   "answer": "je",   "accept": ["je"],         "audio": "" },
+    { "id": "p2_byt_ona_doma", "verbId": "byt", "verbSk": "byť", "verbEn": "to be",   "en": "She is at home.",                     "skTemplate": "Ona ___ doma.",  "skFull": "Ona je doma.",  "answer": "je",   "accept": ["je"],         "audio": "" },
+    { "id": "p2_byt_ono_doma", "verbId": "byt", "verbSk": "byť", "verbEn": "to be",   "en": "It is at home.",                      "skTemplate": "Ono ___ doma.",  "skFull": "Ono je doma.",  "answer": "je",   "accept": ["je"],         "audio": "" },
+    { "id": "p2_byt_my_doma",  "verbId": "byt", "verbSk": "byť", "verbEn": "to be",   "en": "We are at home.",                     "skTemplate": "My ___ doma.",   "skFull": "My sme doma.",  "answer": "sme",  "accept": ["sme"],        "audio": "" },
+    { "id": "p2_byt_vy_doma",  "verbId": "byt", "verbSk": "byť", "verbEn": "to be",   "en": "You (plural/formal) are at home.",   "skTemplate": "Vy ___ doma.",   "skFull": "Vy ste doma.",  "answer": "ste",  "accept": ["ste"],        "audio": "" },
+    { "id": "p2_byt_oni_doma", "verbId": "byt", "verbSk": "byť", "verbEn": "to be",   "en": "They are at home.",                   "skTemplate": "Oni ___ doma.",  "skFull": "Oni sú doma.",  "answer": "sú",   "accept": ["sú", "su"], "audio": "" },
+    { "id": "p2_byt_ony_doma", "verbId": "byt", "verbSk": "byť", "verbEn": "to be",   "en": "They are at home.",                   "skTemplate": "Ony ___ doma.",  "skFull": "Ony sú doma.",  "answer": "sú",   "accept": ["sú", "su"], "audio": "" },
+
+    { "id": "p2_mat_ja",  "verbId": "mat", "verbSk": "mať", "verbEn": "to have", "en": "I have time.",                         "skTemplate": "Ja ___ čas.",    "skFull": "Ja mám čas.",   "answer": "mám",  "accept": ["mám", "mam"],  "audio": "" },
+    { "id": "p2_mat_ty",  "verbId": "mat", "verbSk": "mať", "verbEn": "to have", "en": "You have a car.",                      "skTemplate": "Ty ___ auto.",  "skFull": "Ty máš auto.",  "answer": "máš",  "accept": ["máš", "mas"],  "audio": "" },
+    { "id": "p2_mat_on",  "verbId": "mat", "verbSk": "mať", "verbEn": "to have", "en": "He has a dog.",                        "skTemplate": "On ___ psa.",   "skFull": "On má psa.",    "answer": "má",   "accept": ["má", "ma"],    "audio": "" },
+    { "id": "p2_mat_ona", "verbId": "mat", "verbSk": "mať", "verbEn": "to have", "en": "She has a cat.",                       "skTemplate": "Ona ___ mačku.","skFull": "Ona má mačku.", "answer": "má",   "accept": ["má", "ma"],    "audio": "" },
+    { "id": "p2_mat_ono", "verbId": "mat", "verbSk": "mať", "verbEn": "to have", "en": "It has a name.",                        "skTemplate": "Ono ___ meno.", "skFull": "Ono má meno.",  "answer": "má",   "accept": ["má", "ma"],    "audio": "" },
+    { "id": "p2_mat_my",  "verbId": "mat", "verbSk": "mať", "verbEn": "to have", "en": "We have a house.",                     "skTemplate": "My ___ dom.",   "skFull": "My máme dom.",  "answer": "máme", "accept": ["máme", "mame"],"audio": "" },
+    { "id": "p2_mat_vy",  "verbId": "mat", "verbSk": "mať", "verbEn": "to have", "en": "You have a question.",                 "skTemplate": "Vy ___ otázku.","skFull": "Vy máte otázku.","answer": "máte","accept": ["máte", "mate"],"audio": "" },
+    { "id": "p2_mat_oni", "verbId": "mat", "verbSk": "mať", "verbEn": "to have", "en": "They have time.",                       "skTemplate": "Oni ___ čas.",  "skFull": "Oni majú čas.", "answer": "majú", "accept": ["majú", "maju"],"audio": "" },
+    { "id": "p2_mat_ony", "verbId": "mat", "verbSk": "mať", "verbEn": "to have", "en": "They have time.",                       "skTemplate": "Ony ___ čas.",  "skFull": "Ony majú čas.", "answer": "majú", "accept": ["majú", "maju"],"audio": "" }
+  ]
+}

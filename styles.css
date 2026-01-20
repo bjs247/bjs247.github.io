@@ -5,8 +5,8 @@
 */
 
 :root {
-  --bg: #dedcd5;              /* warm grey-beige */
-  --accent: #e8d1d1;          /* soft pink */
+  --bg: #fff4ea;              /* warm grey-beige */
+  --accent: #ffe4e1;          /* soft pink */
   --text: #121212;
   --muted: rgba(18, 18, 18, 0.68);
   --line: rgba(18, 18, 18, 0.35);
@@ -581,13 +581,13 @@ a {
 .split h2 {
   font-family: "STIX Two Text", ui-serif, Georgia, serif;
   font-weight: 100;
-  font-size: clamp(56px, 6vw, 98px);
+  font-size: clamp(56px, 3.8vw, 98px);
   line-height: 0.9;
   margin: 0 0 16px;
 }
 
 .split p {
-  font-size: clamp(18px, 2vw, 24px);
+  font-size: clamp(18px, 1vw, 24px);
   line-height: 1.4;
   margin: 0 0 16px;
   max-width: 42ch;
@@ -1064,5 +1064,35 @@ body.drawer-open {
   font-variant-numeric: tabular-nums;
   opacity: 0.9;
 }
+
+/* =========================
+   HERO SLIDESHOW SIZE TUNING
+   ========================= */
+
+:root {
+  --slideshow-max-width: 1200px;            /* change this for width */
+  --slideshow-height: clamp(440px, 65vh, 820px); /* change this for height */
+}
+
+/* Width control (how wide the slideshow is inside its section) */
+.hero-carousel {
+  width: 100%;
+  max-width: var(--slideshow-max-width);
+  margin: 0 auto;
+}
+
+/* Height control */
+.hero-carousel__viewport {
+  height: var(--slideshow-height);
+}
+
+/* Make sure images actually fill the viewport cleanly */
+.hero-carousel__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 
 

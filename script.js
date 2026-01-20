@@ -250,5 +250,32 @@
       });
     });
   })();
+  
+  // Footer "Shop" link -> scroll to header shop dropdown and open it
+  (() => {
+    const footerShop = document.getElementById("footerShopLink");
+    const headerShop = document.getElementById("headerShopDropdown");
+
+    if (!footerShop || !headerShop) return;
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const behavior = reducedMotion ? "auto" : "smooth";
+
+    footerShop.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      // IMPORTANT: prevents your document click handler from immediately closing the dropdown
+      e.stopPropagation();
+
+      // Scroll to the header dropdown
+      headerShop.scrollIntoView({ behavior, block: "start" });
+
+      // Open it after scroll starts
+      window.setTimeout(() => {
+        headerShop.open = true;
+        headerShop.querySelector("summary")?.focus({ preventScroll: true });
+      }, reducedMotion ? 0 : 250);
+    });
+  })();
 
 })();

@@ -1,0 +1,94 @@
+{
+  "lessonId": "lesson2",
+  "title": "Lesson 2: Basic Greetings",
+  "intro": "First go through the examples. Then practice (1) Slovak → English meaning, and (2) English → Slovak spelling.",
+  "items": [
+    {
+      "id": "ahoj",
+      "sk": "Ahoj",
+      "en": "Hi / Bye (informal)",
+      "audio": "audio/lesson2/ahoj.mp3",
+      "acceptEn": [
+        "hi",
+        "hello",
+        "bye",
+        "goodbye"
+      ],
+      "acceptSk": [
+        "ahoj"
+      ]
+    },
+    {
+      "id": "cau",
+      "sk": "Čau",
+      "en": "Hi / Bye (informal)",
+      "audio": "audio/lesson2/cau.mp3",
+      "acceptEn": [
+        "hi",
+        "hello",
+        "bye",
+        "goodbye"
+      ],
+      "acceptSk": [
+        "čau",
+        "cau"
+      ]
+    },
+    {
+      "id": "dobry_den",
+      "sk": "Dobrý deň",
+      "en": "Good day (formal)",
+      "audio": "audio/lesson2/dobry-den.mp3",
+      "acceptEn": [
+        "good day",
+        "hello"
+      ],
+      "acceptSk": [
+        "dobrý deň",
+        "dobry den"
+      ]
+    },
+    {
+      "id": "dovidenia",
+      "sk": "Dovidenia",
+      "en": "Goodbye (formal)",
+      "audio": "audio/lesson2/dovidenia.mp3",
+      "acceptEn": [
+        "goodbye",
+        "bye"
+      ],
+      "acceptSk": [
+        "dovidenia"
+      ]
+    },
+    {
+      "id": "prosim",
+      "sk": "Prosím",
+      "en": "Please / You're welcome",
+      "audio": "audio/lesson2/prosim.mp3",
+      "acceptEn": [
+        "please",
+        "you're welcome",
+        "youre welcome"
+      ],
+      "acceptSk": [
+        "prosím",
+        "prosim"
+      ]
+    },
+    {
+      "id": "dakujem",
+      "sk": "Ďakujem",
+      "en": "Thank you",
+      "audio": "audio/lesson2/dakujem.mp3",
+      "acceptEn": [
+        "thank you",
+        "thanks"
+      ],
+      "acceptSk": [
+        "ďakujem",
+        "dakujem"
+      ]
+    }
+  ]
+}

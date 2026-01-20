@@ -1,0 +1,329 @@
+{
+  "lessonId": "lesson1",
+  "title": "Lesson 1: The Slovak Alphabet",
+  "intro": "Listen to each letter, then practice by recording yourself. The site will try to auto-check your pronunciation, but you can always override the result.",
+  "letters": [
+    {
+      "id": "A",
+      "grapheme": "A",
+      "audio": "audio/lesson1/A.mp3",
+      "hint": "Short 'a' sound. (Best learned by listening.)",
+      "accept": []
+    },
+    {
+      "id": "Á",
+      "grapheme": "Á",
+      "audio": "audio/lesson1/A-acute.mp3",
+      "hint": "Long 'á' sound.",
+      "accept": []
+    },
+    {
+      "id": "Ä",
+      "grapheme": "Ä",
+      "audio": "audio/lesson1/A-umlaut.mp3",
+      "hint": "Listen to the audio for this vowel.",
+      "accept": []
+    },
+    {
+      "id": "B",
+      "grapheme": "B",
+      "audio": "audio/lesson1/B.mp3",
+      "hint": "",
+      "accept": []
+    },
+    {
+      "id": "C",
+      "grapheme": "C",
+      "audio": "audio/lesson1/C.mp3",
+      "hint": "",
+      "accept": []
+    },
+    {
+      "id": "Č",
+      "grapheme": "Č",
+      "audio": "audio/lesson1/C-caron.mp3",
+      "hint": "Like 'ch' in 'cheese'.",
+      "accept": []
+    },
+    {
+      "id": "D",
+      "grapheme": "D",
+      "audio": "audio/lesson1/D.mp3",
+      "hint": "",
+      "accept": []
+    },
+    {
+      "id": "Ď",
+      "grapheme": "Ď",
+      "audio": "audio/lesson1/D-caron.mp3",
+      "hint": "Soft 'ď' (palatalized).",
+      "accept": []
+    },
+    {
+      "id": "DZ",
+      "grapheme": "DZ",
+      "audio": "audio/lesson1/DZ.mp3",
+      "hint": "Digraph letter 'dz'.",
+      "accept": []
+    },
+    {
+      "id": "DŽ",
+      "grapheme": "DŽ",
+      "audio": "audio/lesson1/DZ-caron.mp3",
+      "hint": "Digraph letter 'dž' (like 'j' in 'jam').",
+      "accept": []
+    },
+    {
+      "id": "E",
+      "grapheme": "E",
+      "audio": "audio/lesson1/E.mp3",
+      "hint": "",
+      "accept": []
+    },
+    {
+      "id": "É",
+      "grapheme": "É",
+      "audio": "audio/lesson1/E-acute.mp3",
+      "hint": "Long 'é'.",
+      "accept": []
+    },
+    {
+      "id": "F",
+      "grapheme": "F",
+      "audio": "audio/lesson1/F.mp3",
+      "hint": "",
+      "accept": []
+    },
+    {
+      "id": "G",
+      "grapheme": "G",
+      "audio": "audio/lesson1/G.mp3",
+      "hint": "",
+      "accept": []
+    },
+    {
+      "id": "H",
+      "grapheme": "H",
+      "audio": "audio/lesson1/H.mp3",
+      "hint": "",
+      "accept": []
+    },
+    {
+      "id": "CH",
+      "grapheme": "CH",
+      "audio": "audio/lesson1/CH.mp3",
+      "hint": "Digraph letter 'ch' (a throaty sound).",
+      "accept": []
+    },
+    {
+      "id": "I",
+      "grapheme": "I",
+      "audio": "audio/lesson1/I.mp3",
+      "hint": "",
+      "accept": []
+    },
+    {
+      "id": "Í",
+      "grapheme": "Í",
+      "audio": "audio/lesson1/I-acute.mp3",
+      "hint": "Long 'í'.",
+      "accept": []
+    },
+    {
+      "id": "J",
+      "grapheme": "J",
+      "audio": "audio/lesson1/J.mp3",
+      "hint": "Like English 'y' in 'yes'.",
+      "accept": []
+    },
+    {
+      "id": "K",
+      "grapheme": "K",
+      "audio": "audio/lesson1/K.mp3",
+      "hint": "",
+      "accept": []
+    },
+    {
+      "id": "L",
+      "grapheme": "L",
+      "audio": "audio/lesson1/L.mp3",
+      "hint": "",
+      "accept": []
+    },
+    {
+      "id": "Ĺ",
+      "grapheme": "Ĺ",
+      "audio": "audio/lesson1/L-acute.mp3",
+      "hint": "Long 'ĺ'.",
+      "accept": []
+    },
+    {
+      "id": "Ľ",
+      "grapheme": "Ľ",
+      "audio": "audio/lesson1/L-caron.mp3",
+      "hint": "Soft 'ľ'.",
+      "accept": []
+    },
+    {
+      "id": "M",
+      "grapheme": "M",
+      "audio": "audio/lesson1/M.mp3",
+      "hint": "",
+      "accept": []
+    },
+    {
+      "id": "N",
+      "grapheme": "N",
+      "audio": "audio/lesson1/N.mp3",
+      "hint": "",
+      "accept": []
+    },
+    {
+      "id": "Ň",
+      "grapheme": "Ň",
+      "audio": "audio/lesson1/N-caron.mp3",
+      "hint": "Soft 'ň' (like Spanish ñ).",
+      "accept": []
+    },
+    {
+      "id": "O",
+      "grapheme": "O",
+      "audio": "audio/lesson1/O.mp3",
+      "hint": "",
+      "accept": []
+    },
+    {
+      "id": "Ó",
+      "grapheme": "Ó",
+      "audio": "audio/lesson1/O-acute.mp3",
+      "hint": "Long 'ó'.",
+      "accept": []
+    },
+    {
+      "id": "Ô",
+      "grapheme": "Ô",
+      "audio": "audio/lesson1/O-circumflex.mp3",
+      "hint": "Listen to the audio for this vowel.",
+      "accept": []
+    },
+    {
+      "id": "P",
+      "grapheme": "P",
+      "audio": "audio/lesson1/P.mp3",
+      "hint": "",
+      "accept": []
+    },
+    {
+      "id": "Q",
+      "grapheme": "Q",
+      "audio": "audio/lesson1/Q.mp3",
+      "hint": "",
+      "accept": []
+    },
+    {
+      "id": "R",
+      "grapheme": "R",
+      "audio": "audio/lesson1/R.mp3",
+      "hint": "Rolled/trilled 'r'.",
+      "accept": []
+    },
+    {
+      "id": "Ŕ",
+      "grapheme": "Ŕ",
+      "audio": "audio/lesson1/R-acute.mp3",
+      "hint": "Long 'ŕ'.",
+      "accept": []
+    },
+    {
+      "id": "S",
+      "grapheme": "S",
+      "audio": "audio/lesson1/S.mp3",
+      "hint": "",
+      "accept": []
+    },
+    {
+      "id": "Š",
+      "grapheme": "Š",
+      "audio": "audio/lesson1/S-caron.mp3",
+      "hint": "Like 'sh' in 'shoe'.",
+      "accept": []
+    },
+    {
+      "id": "T",
+      "grapheme": "T",
+      "audio": "audio/lesson1/T.mp3",
+      "hint": "",
+      "accept": []
+    },
+    {
+      "id": "Ť",
+      "grapheme": "Ť",
+      "audio": "audio/lesson1/T-caron.mp3",
+      "hint": "Soft 'ť' (palatalized).",
+      "accept": []
+    },
+    {
+      "id": "U",
+      "grapheme": "U",
+      "audio": "audio/lesson1/U.mp3",
+      "hint": "",
+      "accept": []
+    },
+    {
+      "id": "Ú",
+      "grapheme": "Ú",
+      "audio": "audio/lesson1/U-acute.mp3",
+      "hint": "Long 'ú'.",
+      "accept": []
+    },
+    {
+      "id": "V",
+      "grapheme": "V",
+      "audio": "audio/lesson1/V.mp3",
+      "hint": "",
+      "accept": []
+    },
+    {
+      "id": "W",
+      "grapheme": "W",
+      "audio": "audio/lesson1/W.mp3",
+      "hint": "",
+      "accept": []
+    },
+    {
+      "id": "X",
+      "grapheme": "X",
+      "audio": "audio/lesson1/X.mp3",
+      "hint": "",
+      "accept": []
+    },
+    {
+      "id": "Y",
+      "grapheme": "Y",
+      "audio": "audio/lesson1/Y.mp3",
+      "hint": "Same sound as I in modern Slovak; mainly affects spelling.",
+      "accept": []
+    },
+    {
+      "id": "Ý",
+      "grapheme": "Ý",
+      "audio": "audio/lesson1/Y-acute.mp3",
+      "hint": "Long 'ý'.",
+      "accept": []
+    },
+    {
+      "id": "Z",
+      "grapheme": "Z",
+      "audio": "audio/lesson1/Z.mp3",
+      "hint": "",
+      "accept": []
+    },
+    {
+      "id": "Ž",
+      "grapheme": "Ž",
+      "audio": "audio/lesson1/Z-caron.mp3",
+      "hint": "Like 's' in 'measure'.",
+      "accept": []
+    }
+  ]
+}

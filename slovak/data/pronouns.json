@@ -1,0 +1,64 @@
+{
+  "lessonId": "lesson3",
+  "title": "Lesson 3: Pronouns",
+  "intro": "First review the pronoun chart. Then practice (1) typing the English meaning, and (2) using the pronoun in sentences.",
+
+  "chart": [
+    { "id": "ja",  "en": "I", "sk": "ja", "note": "", "audio": "audio/lesson3/ja.mp3" },
+    { "id": "ty",  "en": "you (singular, informal)", "sk": "ty", "note": "", "audio": "audio/lesson3/ty.mp3" },
+    { "id": "on",  "en": "he", "sk": "on", "note": "", "audio": "audio/lesson3/on.mp3" },
+    { "id": "ona", "en": "she", "sk": "ona", "note": "", "audio": "audio/lesson3/ona.mp3" },
+    { "id": "ono", "en": "it", "sk": "ono", "note": "", "audio": "audio/lesson3/ono.mp3" },
+    { "id": "my",  "en": "we", "sk": "my", "note": "", "audio": "audio/lesson3/my.mp3" },
+    { "id": "vy",  "en": "you (plural / formal)", "sk": "vy", "note": "also formal ‘you’ (one person)", "audio": "audio/lesson3/vy.mp3" },
+    { "id": "oni", "en": "they", "sk": "oni", "note": "masc. (common)", "audio": "audio/lesson3/oni.mp3" },
+    { "id": "ony", "en": "they", "sk": "ony", "note": "fem./neut.", "audio": "audio/lesson3/ony.mp3" }
+  ],
+
+  "examples": [
+    { "id": "ex_ja_som_student", "sk": "Ja som študent.", "en": "I am a student.", "audio": "audio/lesson3/ja-som-student.mp3" },
+    { "id": "ex_ty_si_doma", "sk": "Ty si doma.", "en": "You are at home.", "audio": "audio/lesson3/ty-si-doma.mp3" }
+  ],
+
+  "phase1": [
+    { "id": "ja",  "sk": "ja",  "en": "I", "audio": "audio/lesson3/ja.mp3",  "acceptEn": ["i"] },
+    { "id": "ty",  "sk": "ty",  "en": "you (singular, informal)", "audio": "audio/lesson3/ty.mp3",  "acceptEn": ["you", "you (singular)", "you (informal)"] },
+    { "id": "on",  "sk": "on",  "en": "he", "audio": "audio/lesson3/on.mp3",  "acceptEn": ["he"] },
+    { "id": "ona", "sk": "ona", "en": "she", "audio": "audio/lesson3/ona.mp3", "acceptEn": ["she"] },
+    { "id": "ono", "sk": "ono", "en": "it", "audio": "audio/lesson3/ono.mp3", "acceptEn": ["it"] },
+    { "id": "my",  "sk": "my",  "en": "we", "audio": "audio/lesson3/my.mp3",  "acceptEn": ["we"] },
+    { "id": "vy",  "sk": "vy",  "en": "you (plural / formal)", "audio": "audio/lesson3/vy.mp3",  "acceptEn": ["you", "you (plural)", "you (formal)", "you all"] },
+    { "id": "oni", "sk": "oni", "en": "they", "audio": "audio/lesson3/oni.mp3", "acceptEn": ["they"] },
+    { "id": "ony", "sk": "ony", "en": "they", "audio": "audio/lesson3/ony.mp3", "acceptEn": ["they"] }
+  ],
+
+  "phase2": [
+    {
+      "id": "p2_ja",
+      "sk": "ja",
+      "en": "I am a student.",
+      "skTemplate": "___ som študent.",
+      "skFull": "Ja som študent.",
+      "audio": "audio/lesson3/ja-som-student.mp3",
+      "acceptSk": ["ja"]
+    },
+    {
+      "id": "p2_ty",
+      "sk": "ty",
+      "en": "You are at home.",
+      "skTemplate": "___ si doma.",
+      "skFull": "Ty si doma.",
+      "audio": "audio/lesson3/ty-si-doma.mp3",
+      "acceptSk": ["ty"]
+    },
+    {
+      "id": "p2_ona",
+      "sk": "ona",
+      "en": "She is a teacher.",
+      "skTemplate": "___ je učiteľka.",
+      "skFull": "Ona je učiteľka.",
+      "audio": "audio/lesson3/ona-je-ucitelka.mp3",
+      "acceptSk": ["ona"]
+    }
+  ]
+}
