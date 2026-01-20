@@ -15,6 +15,60 @@
   <script src="/script.js" defer></script>
 </head>
 
+<!-- Account Drawer -->
+<div id="accountBackdrop" class="drawer-backdrop" hidden></div>
+
+<aside id="accountDrawer" class="drawer" aria-hidden="true" aria-labelledby="accountTitle">
+  <div class="drawer-header">
+    <div>
+      <h2 id="accountTitle">Account</h2>
+      <p id="userEmail" class="muted small" style="margin:6px 0 0;"></p>
+    </div>
+    <button id="accountClose" class="drawer-close" type="button" aria-label="Close">×</button>
+  </div>
+
+  <div class="drawer-tabs" role="tablist" aria-label="Account tabs">
+    <button class="drawer-tab is-active" type="button" data-tab="login" aria-selected="true">Log in</button>
+    <button class="drawer-tab" type="button" data-tab="signup" aria-selected="false">Sign up</button>
+  </div>
+
+  <div class="drawer-body">
+    <form id="loginForm" class="drawer-panel is-active" data-panel="login">
+      <label class="field">
+        <span>Email</span>
+        <input type="email" name="email" autocomplete="email" required />
+      </label>
+
+      <label class="field">
+        <span>Password</span>
+        <input type="password" name="password" autocomplete="current-password" required />
+      </label>
+
+      <button class="pill pill--solid" type="submit">Log in</button>
+      <p class="muted small" id="authMsg" aria-live="polite"></p>
+    </form>
+
+    <form id="signupForm" class="drawer-panel" data-panel="signup">
+      <label class="field">
+        <span>Email</span>
+        <input type="email" name="email" autocomplete="email" required />
+      </label>
+
+      <label class="field">
+        <span>Password</span>
+        <input type="password" name="password" autocomplete="new-password" required />
+      </label>
+
+      <button class="pill pill--solid" type="submit">Create account</button>
+      <p class="muted small" id="authMsg2" aria-live="polite"></p>
+    </form>
+
+    <button id="logoutBtn" class="pill pill--ghost" type="button" style="margin-top: 14px;" hidden>
+      Log out
+    </button>
+  </div>
+</aside>
+
 <body>
       <header class="site-header" role="banner">
     <div class="container header-top">
@@ -56,6 +110,7 @@
     </div>
 
     <nav class="container header-nav" aria-label="Primary navigation">
+      <a href="/">Home</a>
       <details class="nav-dropdown">
         <summary>Shop</summary>
         <div class="nav-dropdown__menu">

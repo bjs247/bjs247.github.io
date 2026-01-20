@@ -170,13 +170,13 @@
     closeDrawer();
   });
 
-  // Keep UI in sync across refreshes / tabs + admin link
+  // ---- Keep UI in sync across refreshes / tabs + Admin link ----
   const adminLink = document.getElementById("adminLink");
 
   async function updateAdminLink(session) {
     if (!adminLink) return;
 
-    // default hidden
+    // Always hide by default (prevents flash for non-admins)
     adminLink.hidden = true;
 
     if (!session?.user) return;
@@ -185,18 +185,20 @@
       .from("profiles")
       .select("is_admin")
       .eq("id", session.user.id)
-      .maybeSingle(); // safer than .single()
+      .maybeSingle();
 
     if (!error && data?.is_admin) {
       adminLink.hidden = false;
     }
   }
 
-  // IMPORTANT:
-  // Don't do async Supabase calls *inside* onAuthStateChange.
-  // Defer them (Supabase recommends setTimeout(..., 0)).
+  // IMPORTANT: don't do async Supabase calls inside onAuthStateChange.
+  // We defer the DB call with setTimeout.
   function handleSession(session) {
     setAuthUI(session?.user || null);
+
+    // Hide immediately to avoid showing Admin briefly
+    if (adminLink) adminLink.hidden = true;
 
     setTimeout(() => {
       updateAdminLink(session).catch((e) =>
